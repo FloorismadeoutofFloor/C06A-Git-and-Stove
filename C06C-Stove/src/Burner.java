@@ -53,4 +53,14 @@ public class Burner {
 		}
 	}
 	
+	public String display() {
+		switch(myTemperature) {
+		case COLD: return ("[" + mySetting + "].....cooool");
+		case WARM: return ("[" + mySetting + "].....warm");
+		case HOT: return ("[" + mySetting + "].....CAREFUL");
+		case BLAZING: return ("[" + mySetting + "].....VERY HOT! DON'T TOUCH");
+		default: return "Error in display method";
+		}
+	}
+	
 }
