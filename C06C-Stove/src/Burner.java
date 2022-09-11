@@ -1,12 +1,14 @@
 
 public class Burner {
+	//enum variables only to be used in Burner class
 	enum Temperature{BLAZING, HOT, WARM, COLD}
 	private Temperature myTemperature;
+	//uses enum variable from Setting enum
 	private Setting mySetting;
 	int timer;
 	public final static int TIME_DURATION = 2;
 	
-
+	// getter for temperature
 	public Temperature getMyTemperature() {
 		return myTemperature;
 	}
@@ -15,12 +17,15 @@ public class Burner {
 	 * @param myTemperature
 	 * @param mySetting
 	 */
+	//constructor that just sets temp and setting
 	public Burner() {
 		myTemperature = Temperature.COLD;
 		mySetting = Setting.OFF;
 	}
 	
+	//will raise the setting by one notch
 	public void plusButton() {
+		//used to check where the current setting is at
 		switch(mySetting) {
 		case OFF: {mySetting = Setting.LOW; break;}
 		case LOW: {mySetting = Setting.MEDIUM; break;}
@@ -30,7 +35,9 @@ public class Burner {
 		timer = TIME_DURATION;
 	}	
 	
+	//will lower the setting by one notch
 	public void minusButton() {
+		//used to check where the current setting is at
 		switch(mySetting) {
 		case HIGH: {mySetting = Setting.MEDIUM; break;}
 		case MEDIUM: {mySetting = Setting.LOW; break;}
@@ -44,7 +51,7 @@ public class Burner {
 		if (timer != 0) {
 			timer--;
 		}
-		else if (timer == 0) {
+		if (timer == 0) {
 			switch(mySetting) {
 			case OFF:{
 				switch (myTemperature){ 
