@@ -6,8 +6,8 @@ public class Burner {
 	int timer;
 	public final static int TIME_DURATION = 2;
 
-	public Burner() {
-		// TODO Auto-generated constructor stub
+	public Temperature getMyTemperature() {
+		return myTemperature;
 	}
 
 }
