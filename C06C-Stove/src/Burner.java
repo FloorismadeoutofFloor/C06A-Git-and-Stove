@@ -22,9 +22,9 @@ public class Burner {
 	
 	public void plusButton() {
 		switch(mySetting) {
-		case OFF: mySetting = Setting.LOW;
-		case LOW: mySetting = Setting.MEDIUM;
-		case MEDIUM: mySetting = Setting.HIGH;
+		case OFF: {mySetting = Setting.LOW; break;}
+		case LOW: {mySetting = Setting.MEDIUM; break;}
+		case MEDIUM: {mySetting = Setting.HIGH; break;}
 		//case HIGH: System.out.println("At hightest setting");
 		}
 		timer = TIME_DURATION;
@@ -32,9 +32,9 @@ public class Burner {
 	
 	public void minusButton() {
 		switch(mySetting) {
-		case HIGH: mySetting = Setting.MEDIUM;
-		case MEDIUM: mySetting = Setting.LOW;
-		case LOW: mySetting = Setting.OFF;
+		case HIGH: {mySetting = Setting.MEDIUM; break;}
+		case MEDIUM: {mySetting = Setting.LOW; break;}
+		case LOW: {mySetting = Setting.OFF; break;}
 		//case OFF: System.out.println("At Lowest setting");
 		}
 		timer = TIME_DURATION;
@@ -48,32 +48,36 @@ public class Burner {
 			switch(mySetting) {
 			case OFF:{
 				switch (myTemperature){ 
-				case WARM: myTemperature = Temperature.COLD;
-				case HOT: myTemperature = Temperature.WARM; timer = TIME_DURATION;
-				case BLAZING: myTemperature = Temperature.HOT; timer = TIME_DURATION;
+				case WARM: {myTemperature = Temperature.COLD; break;}
+				case HOT: {myTemperature = Temperature.WARM; timer = TIME_DURATION; break;}
+				case BLAZING: {myTemperature = Temperature.HOT; timer = TIME_DURATION; break;}
 				}
-			};
+				break;
+			}
 			case LOW:{ 
 				switch (myTemperature){ 
-				case COLD: myTemperature = Temperature.WARM;
-				case HOT: myTemperature = Temperature.WARM;
-				case BLAZING: myTemperature = Temperature.HOT; timer = TIME_DURATION;
+				case COLD: {myTemperature = Temperature.WARM; break;}
+				case HOT: {myTemperature = Temperature.WARM; break;}
+				case BLAZING: {myTemperature = Temperature.HOT; timer = TIME_DURATION; break;}
 				}
-			};
+				break;
+			}
 			case MEDIUM: {
 				switch (myTemperature){ 
-				case COLD: myTemperature = Temperature.WARM; timer = TIME_DURATION;
-				case WARM: myTemperature = Temperature.HOT;
-				case BLAZING: myTemperature = Temperature.HOT;
+				case COLD: {myTemperature = Temperature.WARM; timer = TIME_DURATION; break; }
+				case WARM: {myTemperature = Temperature.HOT; break; }
+				case BLAZING: {myTemperature = Temperature.HOT; break; }
 				}
-			};
+				break;
+			}
 			case HIGH:{
 				switch (myTemperature){ 
-				case COLD: myTemperature = Temperature.WARM; timer = TIME_DURATION;
-				case WARM: myTemperature = Temperature.HOT; timer = TIME_DURATION;
-				case HOT: myTemperature = Temperature.BLAZING;
+				case COLD: {myTemperature = Temperature.WARM; timer = TIME_DURATION; break; }
+				case WARM: {myTemperature = Temperature.HOT; timer = TIME_DURATION; break; }
+				case HOT: {myTemperature = Temperature.BLAZING; break; }
 				}
-			};
+				break;
+			}
 		}
 		}
 	}
