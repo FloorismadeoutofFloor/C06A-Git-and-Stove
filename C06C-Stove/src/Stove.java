@@ -40,7 +40,7 @@ public class Stove {
 				hotBurnerAlert = true;
 			}
 			//Print burner information
-			System.out.println(b);
+			System.out.println(b.display());
 		}
 		
 		//Print hot burner statement if flag is set
